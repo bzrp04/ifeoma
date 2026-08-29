@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For IFEOMA 💕</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #6b1658;
+            background: linear-gradient(135deg, #ff8fa3, #ffd1dc);
+            overflow-x: hidden;
+        }
+
+        .screen {
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* WELCOME */
+
+        .big-envelope {
+            font-size: 120px;
+            line-height: 1;
+            margin-bottom: 25px;
+            animation: floatEnvelope 2s ease-in-out infinite;
+        }
+
+        .welcome-title {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .welcome-text {
+            font-size: 19px;
+            margin: 10px 0 30px;
+        }
+
+        .enter-button {
+            width: 90%;
+            max-width: 330px;
+            padding: 18px;
+            border: none;
+            border-radius: 40px;
+            background: #d63384;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* HOME */
+
+        .profile-photo {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid white;
+            box-shadow: 0 10px 30px rgba(100,30,60,0.25);
+            margin-bottom: 15px;
+        }
+
+        .heart {
+            font-size: 55px;
+            animation: beat 1.2s infinite;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 10px 0 15px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 380px;
+            background: rgba(255,255,255,0.94);
+            padding: 28px 20px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(100,30,60,0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 17px;
+            margin: 9px 0;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: #d63384;
+            font-size: 18px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .pink-button {
+            background: #d63384;
+            color: white;
+        }
+
+        .message {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        /* FLOATING HEARTS */
+
+        .floating-heart {
+            position: fixed;
+            bottom: -50px;
+            font-size: 25px;
+            animation: floatHeart 6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes floatEnvelope {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes floatHeart {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WELCOME -->
+
+    <div id="welcome" class="screen">
+
+        <div class="big-envelope">💌</div>
+
+        <h1 class="welcome-title">
+            A LITTLE SOMETHING FOR YOU
+        </h1>
+
+        <p class="welcome-text">
+            Made especially for you, IFEOMA ❤️
+        </p>
+
+        <button class="enter-button" onclick="enterApp()">
+            TAP TO ENTER 💕
+        </button>
+
+    </div>
+
+
+    <!-- HOME -->
+
+    <div id="home" class="screen hidden">
+
+        <img src="if.jpg" class="profile-photo">
+
+        <div class="heart">💖</div>
+
+        <h1>IFEOMA</h1>
+
+        <p class="subtitle">
+            Welcome to my little world 😊
+        </p>
+
+        <div class="card">
+
+            <button onclick="showPage('friends')">
+                Friends 🫂
+            </button>
+
+            <button onclick="showPage('besties')">
+                Besties 💕
+            </button>
+
+            <button onclick="showPage('more')">
+                Something More ❤️
+            </button>
+
+            <button class="pink-button" onclick="showPage('secret')">
+                🔐 Secret Message
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FRIENDS -->
+
+    <div id="friends" class="screen hidden">
+
+        <div class="card">
+
+            <div class="heart">🫂</div>
+
+            <h1>Friends</h1>
+
+            <p class="message">
+                Sometimes the best things start
+                with a simple friendship. 😊
+            </p>
+
+            <button class="pink-button" onclick="showPage('home')">
+                ← Go Back
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- BESTIES -->
+
+    <div id="besties" class="screen hidden">
+
+        <div class="card">
+
+            <div class="heart">💕</div>
+
+            <h1>Besties</h1>
+
+            <p class="message">
+                Besties sounds even better. 😌💕
+                <br><br>
+                Someone I can laugh with,
+                talk to and create beautiful
+                memories with.
+            </p>
+
+            <button class="pink-button" onclick="showPage('home')">
+                ← Go Back
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SOMETHING MORE -->
+
+    <div id="more" class="screen hidden">
+
+        <div class="card">
+
+            <div class="heart">❤️</div>
+
+            <h1>Something More</h1>
+
+            <p class="message">
+                Maybe there's something special
+                waiting to happen... ❤️
+                <br><br>
+                But let's take our time
+                and enjoy every moment. 😊
+            </p>
+
+            <button class="pink-button" onclick="showPage('home')">
+                ← Go Back
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SECRET -->
+
+    <div id="secret" class="screen hidden">
+
+        <div class="card">
+
+            <div class="heart">💌</div>
+
+            <h1>Just For You ❤️</h1>
+
+            <p class="message">
+                I don't know exactly where this
+                little journey will take us...
+                <br><br>
+
+                But getting to know you has become
+                something I genuinely enjoy. ❤️
+                <br><br>
+
+                You have a special place in my
+                thoughts, and maybe there's
+                something beautiful waiting for us. 💕
+                <br><br>
+
+                No pressure. No rush.
+                <br>
+                Just taking things one moment
+                at a time. ❤️
+            </p>
+
+            <button class="pink-button" onclick="showPage('home')">
+                ← Back to IFEOMA 💕
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function enterApp() {
+            document.getElementById("welcome").classList.add("hidden");
+            document.getElementById("home").classList.remove("hidden");
+        }
+
+
+        function showPage(page) {
+
+            document.getElementById("welcome").classList.add("hidden");
+            document.getElementById("home").classList.add("hidden");
+            document.getElementById("friends").classList.add("hidden");
+            document.getElementById("besties").classList.add("hidden");
+            document.getElementById("more").classList.add("hidden");
+            document.getElementById("secret").classList.add("hidden");
+
+            document.getElementById(page).classList.remove("hidden");
+        }
+
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "floating-heart";
+            heart.innerHTML = "💗";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (4 + Math.random() * 4) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function() {
+                heart.remove();
+            }, 8000);
+        }
+
+
+        setInterval(createHeart, 900);
+
+    </script>
+
+</body>
+</html>
